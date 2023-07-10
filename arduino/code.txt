@@ -1,0 +1,22 @@
+#include <Servo.h>
+
+Servo servoMotor;  // Crear un objeto de la clase Servo
+
+int servoPin = 9;  // Pin de control del servo
+
+void setup() {
+  servoMotor.attach(servoPin);  // Conectar el servo al pin 9
+  Serial.begin(9600);           // Iniciar comunicación serial a 9600 bps
+  Serial.println("Listo para recibir comandos");
+}
+
+void loop() {
+  if (Serial.available() > 0) {
+    char comando = Serial.read();
+    if (comando == 'I') {       // Mover a la izquierda
+      servoMotor.write(0);     // Establecer posición a 0 grados
+    } else if (comando == 'D') {  // Mover a la derecha
+      servoMotor.write(180);   // Establecer posición a 180 grados
+    }
+  }
+}
