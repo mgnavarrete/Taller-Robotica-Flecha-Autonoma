@@ -2,7 +2,7 @@ import serial
 import keyboard
 
 # Configuración del puerto serial
-ser = serial.Serial("COM35", 9600)  # Reemplaza 'COM3' por el puerto correcto
+ser = serial.Serial("COM32", 9600)  # Reemplaza 'COM3' por el puerto correcto
 print("Conexión establecida")
 
 

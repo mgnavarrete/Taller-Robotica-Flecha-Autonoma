@@ -7,9 +7,9 @@ from time import sleep
 import math
 
 
-ser = serial.Serial("COM16", 9600)  # Reemplaza 'COM3' por el puerto correcto
+ser = serial.Serial("COM32", 9600)  # Reemplaza 'COM3' por el puerto correcto
 print("Conexión establecida")
-nCam = 0  # Valor de la camara, 0 es la del notebook
+nCam = 1  # Valor de la camara, 0 es la del notebook
 cap = cv2.VideoCapture(nCam)
 cv2.namedWindow("frame", cv2.WINDOW_NORMAL)
 cv2.resizeWindow("frame", 640, 480)
@@ -33,7 +33,7 @@ def load_colors(filename):
     return color1_hsv, color2_hsv, color3_hsv
 
 
-colorBack, colorFront, colorGoal = load_colors("colores.txt")
+colorBack, colorFront, colorGoal = load_colors("params\colores.txt")
 
 print(colorBack, colorFront, colorGoal)
 # H   S   V
